@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+@layer base{
+  :root {
+    --background: 27 27 27;
+    --foreground: 225 225 225;
+    --muted: 115 115 115;
+    --accent: 254 254 91; 
+    
+  }
+}
+
+/* @font-face {
+  font-family: 'Samarkan';
+  src: url('../../public/fonts/SamarkanNormal-Gg5D.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../../public/fonts/Poppins-SemiBold.ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+
+.samarkan-font {
+  font-family: 'Samarkan', sans-serif;
+}
+
+.poppins-font {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.shiny-text {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, #ebebea, #f0b41b, #f2db2f);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+
+
+
+
+
+
+@layer utilities {
+  .pause{
+    animation-play-state: paused;
+  }
+  .custom-bg {
+    @apply bg-background/20 border border-accent/30 border-solid backdrop-blur-[6px] shadow-glass-inset hover:shadow-glass-sm;
+  }
+
+}
+@keyframes move{
+  0% {
+    transform: translate(0,0);
+  }
+  100% {
+    transform: translate(100px, 100px);
+  }
+ 
+}
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sanskrit-logo {
+  animation: reveal 5s ease forwards;
+}
+.reveal-text {
+  opacity: 0;
+  animation: revealAnimation 10s ease forwards;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes revealAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(1/2);
+    transform: translateX(1/2);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(1/2);
+  }
+}
+
+
+
+
+
+/* @keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+   */
+/* Custom scrollbar styles */
+.chatbot-container ::-webkit-scrollbar {
+  width: 3px;
+  padding: 10px; /* Width of the scrollbar */
+}
+
+.chatbot-container ::-webkit-scrollbar-track {
+  background: wheat; /* Background of the scrollbar track */
+}
+
+.chatbot-container ::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Round edges for the scrollbar thumb */
+}
+
+.chatbot-container ::-webkit-scrollbar-thumb:hover {
+  background: #cbbf4f; /* Color of the scrollbar thumb on hover */
+}
