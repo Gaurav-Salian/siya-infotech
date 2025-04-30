@@ -214,7 +214,7 @@ export const BtnList = [
   // { label :"Technical News", link:"/tweets",icon:"tweets", newTab:false},
   {
     label: "Company Brochure",
-    link: "/../resume1.pdf",
+    link: "https://glizch.in/voucher/SIYA_JEWELS_INFOTECH.pdf",
     icon: "resume",
     newTab: false,
   },
